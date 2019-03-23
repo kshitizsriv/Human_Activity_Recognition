@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
+#importing the dataset
 dataset1=pd.read_csv('train.csv')
 dataset2=pd.read_csv('test.csv')
 X_train=dataset1.iloc[:,0:561].values
@@ -17,7 +18,6 @@ from sklearn.preprocessing import LabelEncoder
 labelencoder_y=LabelEncoder()
 y_train=labelencoder_y.fit_transform(y_train[:,0])
 y_test=labelencoder_y.fit_transform(y_test[:,0])
-
 
 
 #feature scaling
@@ -34,7 +34,6 @@ X_test=pca.transform(X_test)
 explained_variance=pca.explained_variance_ratio_
 
 
-
 #splitting into train_dev
 from sklearn.model_selection import train_test_split
 X_train,X_dev,y_train,y_dev=train_test_split(X_train,y_train,test_size=0.3,random_state=0)
@@ -45,9 +44,6 @@ classifier = SVC(decision_function_shape= 'ovr', kernel='linear', random_state=0
 classifier.fit(X_train,y_train)
 
 
-
-
-#
 # Fitting classifier to the Training set
 from sklearn.ensemble import RandomForestClassifier
 classifier=RandomForestClassifier(n_estimators=30,criterion='entropy',random_state=0)
@@ -100,7 +96,7 @@ for i,j in enumerate(np.unique(y_set)):
     plt.xlabel('first feature(After pca dim_red)')
     plt.ylabel('second feature(After pca dim_red)')
 plt.legend(key)
-    plt.show()
+plt.show()
     
 #visualising the cross validation set set
 from matplotlib.colors import ListedColormap
