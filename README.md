@@ -65,5 +65,5 @@ F=(2*precision*Recall) / (Precision+Recall)
 
 Accuracy:
 Training:98
-Test:95~96
-Validation:95~96
+Test:95-96                                                                                                                 
+Validation:95-96
