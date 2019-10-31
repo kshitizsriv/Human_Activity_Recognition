@@ -27,11 +27,10 @@ Found the most optimal at 200
 -Elimation of Redundant Features
 
 Steps Mathematically:
--find the mean
--shift the origin to the mean
--Rotate the axis to find the direction of maximum variance which will be the loading score corresponding to the first PC
--Do the same for rest of the PC                                                                                                    
--The direction of maximum variance is the Eigen Vector of the covariance matrix of (feature x feature)
+-find the mean                                                                                                          
+-shift the origin to the mean                                                                                                           
+-Rotate the axis to find the direction of maximum variance which will be the loading score corresponding to the first PC                 
+-Do the same for rest of the PC                                                                                                          -The direction of maximum variance is the Eigen Vector of the covariance matrix of (feature x feature)
 -Its value is proportional to eigen value.
 -variance = (eigen value)/sample space size
 -Eigen value id actualy the sum of projection of all the training examples along the direction of PC or eigen vector
